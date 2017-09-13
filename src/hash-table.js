@@ -25,7 +25,7 @@ class HashTable {
     const index = getIndexBelowMax(key);
     for (let i = 0; i < this.storage[index].length; i++) {
       if (this.storage[index][i][0] === key) {
-        delete this.storage.remove[index]; // can I use storage.removeItem(keyName)?;
+        delete this.storage[index][i].splice(1, 1); // <-- inserted during review. But can I use storage.removeItem(keyName) instead of splice?
       }
     }
   }
